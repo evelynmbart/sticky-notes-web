@@ -1,29 +1,46 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
 
 .note-tabs {
   height: 150px;
-  max-width:100%;
-  margin: 50px;
+  width:90%;
+  margin: 10px;
   margin-bottom: 0px;
-  background-color: rgb(169, 239, 169);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.newNoteList {
-  background-color: rgb(131, 139, 246);
-  margin: auto;
+.note {
+  margin: 10px;
   height: 70px;
   width: 70px;
+  border: 1px solid black;
 }
 
 .addNote {
-  margin: auto;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(74, 130, 234);
+  border: 1px solid rgb(74, 130, 234);
+  border-radius: 40px;
 }
 
 .text-area {
   height: 600px;
   width: 90%;
-  margin: 50px;
-  background-color: pink;
+  margin: 20px;
+  background-color: rgb(248, 200, 238);
+  border:1px solid black;
+}
+
+.saveNote {
+  border-radius: 40px;
+  margin-top: 10px;
+  margin-bottom: 100px;
 }

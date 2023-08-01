@@ -4,41 +4,48 @@ import { useState } from 'react';
 
 function App() {
   const [noteList, setNoteList] = useState([]);
-  const [addNewNote, setAddNewNote] = useState("New note...");
-
-
-  const handleChange = (event) => {
-    setAddNewNote(event.target.value);
-  }
+  const [text, setText] = useState("");
 
   const addNote = () => {
-    console.log("adding new note")
-    setNoteList([...noteList, addNewNote]);
+    setNoteList([...noteList, {
+      color: Math.floor(Math.random()*16777215).toString(16)
+    }]);
   }
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+    console.log(text);
+  };
 
   return (
       <div className="App">
         <div className="note-tabs">
-          <div className="newNoteList">
-            {noteList.map((note) => {
-              return (
-                console.log({note})
-              );
-            })}
-          </div>
+          {noteList.map((note, i) => {
+            return (
+              <div className="note" onClick={() => {
+                alert("works " + i);
+              }} style={{
+                backgroundColor: "#" + note.color,
+              }} />
+            )
+          })}
           <button 
             className="addNote" 
             onClick={addNote}
             >
           Add note</button>
         </div>
-        <div>
-          <input
-            className="text-area" 
-            onChange={handleChange}
-          >
-          </input>
-        </div>
+        <textarea
+          className="text-area" 
+          onChange={handleChange}
+        >
+        </textarea>
+        <button className='saveNote' onClick={() => {
+          console.log(setText);
+        }}
+        >
+          Save Note
+        </button>
       </div>
   );
 }
