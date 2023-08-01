@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { useState } from 'react';
 
 function App() {
+  const [noteList, setNoteList] = useState([]);
+  const [addNewNote, setAddNewNote] = useState("New note...");
+
+
+  const handleChange = (event) => {
+    setAddNewNote(event.target.value);
+  }
+
+  const addNote = () => {
+    console.log("adding new note")
+    setNoteList([...noteList, addNewNote]);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <div className="note-tabs">
+          <div className="newNoteList">
+            {noteList.map((note) => {
+              return (
+                console.log({note})
+              );
+            })}
+          </div>
+          <button 
+            className="addNote" 
+            onClick={addNote}
+            >
+          Add note</button>
+        </div>
+        <div>
+          <input
+            className="text-area" 
+            onChange={handleChange}
+          >
+          </input>
+        </div>
+      </div>
   );
 }
 

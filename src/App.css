@@ -2,37 +2,28 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.note-tabs {
+  height: 150px;
+  max-width:100%;
+  margin: 50px;
+  margin-bottom: 0px;
+  background-color: rgb(169, 239, 169);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.newNoteList {
+  background-color: rgb(131, 139, 246);
+  margin: auto;
+  height: 70px;
+  width: 70px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.addNote {
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-area {
+  height: 600px;
+  width: 90%;
+  margin: 50px;
+  background-color: pink;
 }
