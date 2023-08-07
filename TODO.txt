@@ -1,0 +1,4 @@
+- Implement delete note -> COMPLETED
+- add the color that was generated randomly for each note to show when note is clicked for bigscreen
+- Make the note tabs look like periodic elements (some way to edit note tabs)
+- Save note data to local storage

@@ -1,8 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Handlee&family=Indie+Flower&family=Laila:wght@500&family=M+PLUS+1p:wght@300&family=Neucha&family=Poiret+One&display=swap');
+html {
+ 
+  background-color: white;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
+}
+
+.navBar {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-bottom: 1px solid black;
+  width: 90%;
+  font-family: Laila;
+  font-size: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 55px;
+  font-family: Fredericka the Great;
+}
+
+.lightBulb {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: yellow;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .note-tabs {
@@ -13,6 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Neucha;
 }
 
 .note {
@@ -20,27 +55,48 @@
   height: 70px;
   width: 70px;
   border: 1px solid black;
+  border-radius: 5px;
+  font-family: Neucha;
 }
 
-.addNote {
+.addNoteButton {
   margin: 10px;
   height: 50px;
   width: 50px;
-  background-color: rgb(74, 130, 234);
-  border: 1px solid rgb(74, 130, 234);
-  border-radius: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family:Laila;
+  line-height: 15px;
+  background-color:rgb(80, 78, 78);
+  color: white;
 }
 
 .text-area {
   height: 600px;
-  width: 90%;
+  width: 80%;
   margin: 20px;
-  background-color: rgb(248, 200, 238);
   border:1px solid black;
+  border-radius: 5px;
+  color:black;
+  font-family: Laila;
+  font-size: 25px;
 }
 
 .saveNote {
   border-radius: 40px;
   margin-top: 10px;
   margin-bottom: 100px;
+}
+
+.deleteNoteButton {
+  margin: 10px;
+  margin-bottom: 30px;
+  height: 30px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family:Laila;
+  line-height: 15px;
+  background-color:rgb(80, 78, 78);
+  color: white;
 }
