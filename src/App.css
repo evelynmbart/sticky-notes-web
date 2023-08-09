@@ -42,7 +42,7 @@ html {
 .note-tabs {
   height: 150px;
   width:90%;
-  margin: 10px;
+  margin: 5px;
   margin-bottom: 0px;
   display: flex;
   justify-content: center;
@@ -52,14 +52,29 @@ html {
 
 .note {
   margin: 10px;
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 85px;
   border: 1px solid black;
   border-radius: 5px;
   font-family: Neucha;
 }
 
-.addNoteButton {
+.noteTitleInput {
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  height: 76px;
+  max-height: 30;
+  max-width: 80px;
+  background-color: transparent;
+  border: 0;
+  resize:none;
+  overflow:hidden;
+  font-family: neucha;
+  font-size: 25px;
+}
+
+.addNoteButton, .deleteNoteButton {
   margin: 10px;
   height: 50px;
   width: 50px;
@@ -67,7 +82,7 @@ html {
   border-radius: 5px;
   font-family:Laila;
   line-height: 15px;
-  background-color:rgb(80, 78, 78);
+  background-color:rgb(161, 160, 160);
   color: white;
 }
 
@@ -86,17 +101,4 @@ html {
   border-radius: 40px;
   margin-top: 10px;
   margin-bottom: 100px;
-}
-
-.deleteNoteButton {
-  margin: 10px;
-  margin-bottom: 30px;
-  height: 30px;
-  width: 100px;
-  border: 1px solid black;
-  border-radius: 5px;
-  font-family:Laila;
-  line-height: 15px;
-  background-color:rgb(80, 78, 78);
-  color: white;
 }

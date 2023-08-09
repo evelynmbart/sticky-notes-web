@@ -23,8 +23,8 @@ import { useState } from 'react';
     'c2bafd',
     'c5eff3',
     'd6ffd7',
-
   ];
+
   const selectColor = () => {
     const random = Math.floor(Math.random() * colors.length);
     const selected = colors[random];
@@ -35,20 +35,23 @@ function App() {
   const [noteList, setNoteList] = useState([{
     color: selectColor(),
     text: '',
+    title: ''
   }]);
   const [selectedNoteIndex, setSelectedNoteIndex] = useState(0);
+  // const [periodicLabel, setPeriodicLabel] = useState('');
 
   
   const addNote = () => {
     setNoteList([...noteList, {
       color: selectColor(),
-      text: ''
+      text: '',
+      title: ''
     }]);
     setSelectedNoteIndex(noteList.length);
-    return noteList.color;
-    
+    return (
+      noteList.color
+    );
   }
-
 
   //if note is selected, change textarea to corresponding color
 
@@ -63,17 +66,24 @@ function App() {
       return {
         color: note.color,
         text: e.target.value,
+        title: note.title
       }
     }))
   };
 
   const handleDeleteClick = () => {
-      setNoteList(noteList.filter((_, i) => {
-        return i !== selectedNoteIndex;
-      }));
-      if (selectedNoteIndex === 0) return;
-      setSelectedNoteIndex(selectedNoteIndex - 1);
-  }
+    setNoteList(noteList.filter((_, i) => {
+      return i !== selectedNoteIndex;
+    }));
+    if (selectedNoteIndex === 0) return;
+    setSelectedNoteIndex(selectedNoteIndex - 1);
+}
+
+  // const periodicElementLabels = () => {
+  //   setPeriodicLabel((noteList, i) => {
+  //     console.log(noteList.title);
+  //   })
+  // }
 
 
   return (
@@ -86,13 +96,24 @@ function App() {
           Br<div className="lightBulb">i</div>ght Ideas
         </div>
         <div className="note-tabs">
+        <button className='deleteNoteButton' onClick={handleDeleteClick}>
+          Delete Note
+        </button>
           {noteList.map((note, i) => {
             return (
-              <div className="note" onClick={() => {
-                setSelectedNoteIndex(i);
-              }} style={{
-                backgroundColor: "#" + note.color,
-              }} />
+              <div 
+                className="note" 
+                onClick={() => {setSelectedNoteIndex(i)}} 
+                style={{backgroundColor: "#" + note.color}}
+                // onChange={periodicElementLabels}
+              >{note.title}
+                <textarea 
+                  maxLength={15} 
+                  className="noteTitleInput" 
+                  type="text" 
+                  placeholder='Untitled'>
+                </textarea>
+              </div>
             );
           })}
           <button className="addNoteButton" onClick={addNote}>
@@ -109,9 +130,6 @@ function App() {
             style={{ backgroundColor: '#' + noteList[selectedNoteIndex].color }}
             >
             </textarea>
-            <button className='deleteNoteButton' onClick={handleDeleteClick}>
-              Delete Note
-            </button>
           </>
         )}
       </div>
